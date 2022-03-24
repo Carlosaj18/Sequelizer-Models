@@ -1,4 +1,5 @@
 const db = require('../database/models/index.js');
+const sequelize = db.sequelize;
 
 const moviesController = {
 
@@ -26,7 +27,9 @@ const moviesController = {
     }, 
     recomended: function (req, res) {
         db.Pelicula.findAll({
-            where: {}, 
+            where: {
+                rating: {[db.Sequelize.Op.gte] : 8 }
+            }, 
             order: [
                 ["release_date", "ASC"]
             ],

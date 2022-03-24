@@ -24,7 +24,7 @@ module.exports = (sequelize, dataType) => {
         timestamps: false
     }
 
-    const Peliculas = sequelize.define(alias, cols, config);
-    return Peliculas;
+    const Generos = sequelize.define(alias, cols, config);
+    return Generos;
     
 }
